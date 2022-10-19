@@ -1,12 +1,17 @@
 # Laravel Core Aplication Service 
 This package *Laravel Core Aplication Service* is a core application. 
 
+## installation 
+
+```bash 
+composer require jmrashed/laravel-core-aplication-service
+```
 
 | **Laravel**  |  **service** |
 |---|---|
 | ^7.4  | ^8.10 |
 
-`Jmrashed/core-service` is a Laravel package which manage your application installation and update system. This package is supported and tested in Laravel `8.10` It is a core package of Jmrashed.
+`jmrashed/laravel-core-aplication-service` is a Laravel package which manage your application installation and update system. This package is supported and tested in Laravel `8.10` It is a core package of Jmrashed.
 
 ## Requirements
 - [PHP >= 7.4 | ^8.10 ](http://php.net/)
