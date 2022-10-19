@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Requests;
+namespace Jmrashed\LaravelCoreService\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,16 +24,13 @@ class InstallRequest extends FormRequest
     public function rules()
     {
         $option = $this->route('option');
-
         $rules = array();
-
         $rules = [
             'db_port'     => 'required',
             'db_host'     => 'required',
             'db_database' => 'required',
             'db_username' => 'required'
         ];
-
         if ($option === 'admin') {
             $rules['first_name']            = 'required';
             $rules['last_name']             = 'required';
@@ -42,12 +39,10 @@ class InstallRequest extends FormRequest
             $rules['password']              = 'required|min:6';
             $rules['password_confirmation'] = 'required|same:password';
         }
-
         if ($option === 'access_code') {
             $rules['access_code']  = 'required';
             $rules['envato_email'] = 'required|email';
         }
-
         return $rules;
     }
 

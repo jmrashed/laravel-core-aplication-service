@@ -1,34 +1,25 @@
-# OnestTech Ltd IT Core Service
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/honesttraders/core-service.svg?style=flat-square)](https://packagist.org/packages/honesttraders/core-service)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-
-
-
-[![GitHub issues](https://img.shields.io/github/issues/honesttraders/core-service.svg?style=flat-square)](https://img.shields.io/github/issues/honesttraders/core-service)
-[![GitHub forks](https://img.shields.io/github/forks/honesttraders/core-service.svg?style=flat-square)](https://img.shields.io/github/forks/honesttraders/core-service)
-[![GitHub stars](https://img.shields.io/github/stars/honesttraders/core-service.svg?style=flat-square)](https://img.shields.io/github/stars/honesttraders/core-service)
-[![GitHub license](https://img.shields.io/github/license/honesttraders/core-service.svg?style=flat-square)](https://img.shields.io/github/license/honesttraders/core-service)
+# Laravel Core Aplication Service 
+This package *Laravel Core Aplication Service* is a core application. 
 
 
 | **Laravel**  |  **service** |
 |---|---|
-| 7.0  | ^1.0 |
+| ^7.4  | ^8.10 |
 
-`honesttraders/core-service` is a Laravel package which manage your application installation and update system. This package is supported and tested in Laravel 7. It is a core package of honesttraders.
+`Jmrashed/core-service` is a Laravel package which manage your application installation and update system. This package is supported and tested in Laravel `8.10` It is a core package of Jmrashed.
 
 ## Requirements
-- [PHP >= 7.2](http://php.net/)
-- [Laravel 7|8](https://github.com/laravel/framework)
+- [PHP >= 7.4 | ^8.10 ](http://php.net/)
+- [Laravel 7 | 8 ](https://github.com/laravel/framework)
 
 
 ## Credits
 
-- [honesttraders](https://wwww.honesttradersltd.com)
+- [Jmrashed](https://github.com/jmrashed)
 
-## About honesttraders Ltd
+## About Jmrashed
 
-honesttraders Ltd. is a web development company which is specialising on the Laravel framework.  We are a team of dedicated and experienced Laravel developers who are passionate about building high quality Laravel applications.
+Jmrashed is a web development company which is specialising on the Laravel framework.  We are a team of dedicated and experienced Laravel developers who are passionate about building high quality Laravel applications.
 
 
 ## License

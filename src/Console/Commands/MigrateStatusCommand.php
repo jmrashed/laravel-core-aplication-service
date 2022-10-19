@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Console\Commands;;
+namespace Jmrashed\LaravelCoreService\Console\Commands;;
 
 use Illuminate\Database\Console\Migrations\BaseCommand;
 use Illuminate\Support\Collection;
@@ -12,7 +12,7 @@ class MigrateStatusCommand extends BaseCommand
      *
      * @var string
      */
-    protected $signature = 'honesttraders:migrate-status';
+    protected $signature = 'Jmrashed:migrate-status';
 
     /**
      * The console command description.

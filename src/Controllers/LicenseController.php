@@ -1,11 +1,11 @@
 <?php
 
-namespace HonestTraders\CoreService\Controllers;
+namespace Jmrashed\LaravelCoreService\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use HonestTraders\CoreService\Repositories\LicenseRepository;
+use Jmrashed\LaravelCoreService\Repositories\LicenseRepository;
 use Toastr;
 
 class LicenseController extends Controller{

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['namespace' => 'HonestTraders\CoreService\Controllers', 'middleware' => 'web'], function () {
+Route::group(['namespace' => 'Jmrashed\LaravelCoreService\Controllers', 'middleware' => 'web'], function () {
     Route::group(['prefix' => 'install'], function(){
         Route::get('pre-requisite', 'InstallController@preRequisite')->name('service.preRequisite');
         Route::get('license', 'InstallController@license')->name('service.license');

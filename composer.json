@@ -1,24 +1,24 @@
 {
-    "name": "honesttraders/core-service",
-    "description": "Basic Service Provider for OnestTech Ltd application.",
+    "name": "jmrashed/laravel-core-aplication-service",
+    "description": "Basic Service Provider for laravel aplication.",
     "type": "library",
     "license": "MIT",
     "authors": [{
-        "name": "honesttraders",
-        "email": "honesttradersbd@gmail.com"
+        "name": "jmrashed",
+        "email": "jmrashed@gmail.com"
     }],
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
-            "HonestTraders\\CoreService\\": "src/"
+            "Jmrashed\\LaravelCoreService\\": "src/"
         },
         "files": ["helpers/helper.php"]
     },
     "extra": {
         "laravel": {
             "providers": [
-                "HonestTraders\\CoreService\\HonestTradersServiceProvider"
+                "Jmrashed\\LaravelCoreService\\LaravelCoreServiceProvider"
             ]
         }
     }

@@ -213,7 +213,7 @@
 @stop
 @php
 
-    $base_path = 'public/vendor/honesttraders';
+    $base_path = 'public/vendor/Jmrashed';
 
 @endphp
 @push('scripts')

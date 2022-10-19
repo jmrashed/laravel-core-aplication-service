@@ -1,10 +1,10 @@
 <?php
 
-namespace HonestTraders\CoreService\Controllers\Api;
+namespace Jmrashed\LaravelCoreService\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use HonestTraders\CoreService\Repositories\InitRepository;
+use Jmrashed\LaravelCoreService\Repositories\InitRepository;
 
 class CheckController extends Controller{
 

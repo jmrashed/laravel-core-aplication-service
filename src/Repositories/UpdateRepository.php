@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Repositories;
+namespace Jmrashed\LaravelCoreService\Repositories;
 ini_set('max_execution_time', 0);
 
 use Illuminate\Support\Facades\Artisan;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use HonestTraders\CoreService\Repositories\InitRepository;
+use Jmrashed\LaravelCoreService\Repositories\InitRepository;
 use Illuminate\Validation\ValidationException;
 use Throwable;
 
@@ -45,7 +45,7 @@ class UpdateRepository
         $c = Storage::disk('local')->exists('.app_installed') ? Storage::disk('local')->get('.app_installed') : null;
         $v = Storage::disk('local')->exists('.version') ? Storage::disk('local')->get('.version') : null;
 
-        $url = verifyUrl(config('honesttraders.verifier', 'auth')).'/api/cc?a=download&u='. url('/') .'&ac='.$ac.'&i='.config('app.item').'&e='.$e.'&c='.$c.'&v='.$v;
+        $url = verifyUrl(config('Jmrashed.verifier', 'auth')).'/api/cc?a=download&u='. url('/') .'&ac='.$ac.'&i='.config('app.item').'&e='.$e.'&c='.$c.'&v='.$v;
 
 
         $zipFile = $build;
@@ -145,7 +145,7 @@ class UpdateRepository
             Artisan::call('migrate', array('--force' => true));
         } catch (Throwable $e) {
             Log::info($e->getMessage());
-            $sql = base_path('database/' . config('honesttraders.database_file'));
+            $sql = base_path('database/' . config('Jmrashed.database_file'));
             if (File::exists($sql)) {
                 DB::unprepared(file_get_contents($sql));
             }

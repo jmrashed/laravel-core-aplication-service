@@ -1,7 +1,7 @@
 @extends('service::layouts.app_install', ['title' => __('lms::install.welcome')])
 
 @php
-$base_path = 'public/vendor/honesttraders';
+$base_path = 'public/vendor/Jmrashed';
 @endphp
 @section('content')
 <div class="col-4">

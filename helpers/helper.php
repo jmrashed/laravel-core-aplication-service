@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use HonestTraders\CoreService\Repositories\InitRepository;
-use HonestTraders\CoreService\Repositories\InstallRepository;
+use Jmrashed\LaravelCoreService\Repositories\InitRepository;
+use Jmrashed\LaravelCoreService\Repositories\InstallRepository;
 
 if (!function_exists('isTestMode')) {
     function isTestMode()
@@ -133,8 +133,8 @@ if (!function_exists('nav_item_open')) {
 if (!function_exists('app_url')) {
     function app_url()
     {
-        $saas = config('honesttraders.saas_module_name', 'Saas');
-        $module_check_function = config('honesttraders.module_status_check_function', 'moduleStatusCheck');
+        $saas = config('Jmrashed.saas_module_name', 'Saas');
+        $module_check_function = config('Jmrashed.module_status_check_function', 'moduleStatusCheck');
         if (function_exists($module_check_function) && $module_check_function($saas)) {
             return config('app.url');
         }

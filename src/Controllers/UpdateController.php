@@ -1,12 +1,12 @@
 <?php
 
-namespace HonestTraders\CoreService\Controllers;
+namespace Jmrashed\LaravelCoreService\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use HonestTraders\CoreService\Repositories\InitRepository;
-use HonestTraders\CoreService\Repositories\UpdateRepository;
+use Jmrashed\LaravelCoreService\Repositories\InitRepository;
+use Jmrashed\LaravelCoreService\Repositories\UpdateRepository;
 
 class UpdateController extends Controller
 {

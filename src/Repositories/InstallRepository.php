@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Repositories;
+namespace Jmrashed\LaravelCoreService\Repositories;
 
 ini_set('max_execution_time', -1);
 
@@ -68,7 +68,7 @@ class InstallRepository
     {
         try {
             DB::connection()->getPdo();
-            return (Storage::disk('local')->exists('.install_count') ? Storage::disk('local')->get('.install_count') : 0) and (Artisan::call('honesttraders:migrate-status'));
+            return (Storage::disk('local')->exists('.install_count') ? Storage::disk('local')->get('.install_count') : 0) and (Artisan::call('Jmrashed:migrate-status'));
         } catch (Exception $e) {
             return false;
         }
@@ -89,7 +89,7 @@ class InstallRepository
     public function getPreRequisite()
     {
         $server[] = $this->check((dirname($_SERVER['REQUEST_URI']) != '/' && str_replace('\\', '/', dirname($_SERVER['REQUEST_URI'])) != '/'), 'Installation directory is valid.', 'Please use root directory or point your sub directory to domain/subdomain to install.', true);
-        $server[] = $this->check($this->my_version_compare(phpversion(), config('honesttraders.php_version', '7.2.0'), '>='), sprintf('Min PHP version ' . config('honesttraders.php_version', '7.2.0') . ' (%s)', 'Current Version ' . phpversion()), 'Current Version ' . phpversion(), true);
+        $server[] = $this->check($this->my_version_compare(phpversion(), config('Jmrashed.php_version', '7.2.0'), '>='), sprintf('Min PHP version ' . config('Jmrashed.php_version', '7.2.0') . ' (%s)', 'Current Version ' . phpversion()), 'Current Version ' . phpversion(), true);
         $server[] = $this->check(extension_loaded('fileinfo'), 'Fileinfo PHP extension enabled.', 'Install and enable Fileinfo extension.', true);
         $server[] = $this->check(extension_loaded('ctype'), 'Ctype PHP extension enabled.', 'Install and enable Ctype extension.', true);
         $server[] = $this->check(extension_loaded('json'), 'JSON PHP extension enabled.', 'Install and enable JSON extension.', true);
@@ -106,7 +106,7 @@ class InstallRepository
         $folder[] = $this->check(is_writable(base_path("/storage/logs")), 'Folder /storage/logs is writable', 'Folder /storage/logs is not writable', true);
         $folder[] = $this->check(is_writable(base_path("/bootstrap/cache")), 'Folder /bootstrap/cache is writable', 'Folder /bootstrap/cache is not writable', true);
 
-        $verifier = verifyUrl(config('honesttraders.verifier', 'auth'));
+        $verifier = verifyUrl(config('Jmrashed.verifier', 'auth'));
 
         return ['server' => $server, 'folder' => $folder, 'verifier' => $verifier];
     }
@@ -194,7 +194,7 @@ class InstallRepository
             throw ValidationException::withMessages(['message' => 'No internect connection.']);
         }
         // $ve = Storage::disk('local')->exists('.ve') ? Storage::disk('local')->get('.ve') : 'e';
-        // $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=install&u=' . app_url() . '&ac=' . request('access_code') . '&i=' . config('app.item') . '&e=' . request('envato_email') . '&ri=' . request('re_install') . '&current=' . urlencode(request()->path()) . '&ve=' . $ve;
+        // $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=install&u=' . app_url() . '&ac=' . request('access_code') . '&i=' . config('app.item') . '&e=' . request('envato_email') . '&ri=' . request('re_install') . '&current=' . urlencode(request()->path()) . '&ve=' . $ve;
 
         // $response = curlIt($url);
         // if (gv($response, 'goto')) {
@@ -251,7 +251,7 @@ class InstallRepository
         $v = Storage::disk('local')->exists('.version') ? Storage::disk('local')->get('.version') : null;
 
 
-        $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=verify&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v . '&current=' . urlencode(request()->path());
+        $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=verify&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v . '&current=' . urlencode(request()->path());
         $response = curlIt($url);
         if (gv($response, 'goto')) {
             return redirect($goto)->send();
@@ -331,7 +331,7 @@ class InstallRepository
         } catch (Throwable $e) {
             $this->rollbackDb();
             Log::error($e);
-            // $sql = base_path('database/' . config('honesttraders.database_file'));
+            // $sql = base_path('database/' . config('Jmrashed.database_file'));
             // if (File::exists($sql)) {
             //     DB::unprepared(file_get_contents($sql));
             // }
@@ -400,14 +400,14 @@ class InstallRepository
                     $name => 0
                 ]);
             } else {
-                if (!Schema::hasColumn(config('honesttraders.settings_table'), $name)) {
-                    Schema::table(config('honesttraders.settings_table'), function ($table) use ($name) {
+                if (!Schema::hasColumn(config('Jmrashed.settings_table'), $name)) {
+                    Schema::table(config('Jmrashed.settings_table'), function ($table) use ($name) {
                         $table->integer($name)->default(1)->nullable();
                     });
                 }
             }
         } else {
-            $settings_model_name = config('honesttraders.settings_model');
+            $settings_model_name = config('Jmrashed.settings_model');
             $settings_model = new $settings_model_name;
             $config = $settings_model->firstOrCreate(['key' => $name]);
         }
@@ -422,7 +422,7 @@ class InstallRepository
                 $notes = $array[$name]['notes'][0];
 
                 DB::beginTransaction();
-                $module_class_name = config('honesttraders.module_manager_model');
+                $module_class_name = config('Jmrashed.module_manager_model');
                 $moduel_class = new $module_class_name;
                 $s = $moduel_class->where('name', $name)->first();
                 if (empty($s)) {
@@ -439,7 +439,7 @@ class InstallRepository
                 $s->checksum = gv($response, 'checksum');
                 $r = $s->save();
 
-                $settings_model_name = config('honesttraders.settings_model');
+                $settings_model_name = config('Jmrashed.settings_model');
                 $settings_model = new $settings_model_name;
                 if ($row) {
                     $config = $settings_model->firstOrNew(['key' => $name]);
@@ -481,7 +481,7 @@ class InstallRepository
     protected function disableModule($module_name, $row = false, $file = false)
     {
 
-        $settings_model_name = config('honesttraders.settings_model');
+        $settings_model_name = config('Jmrashed.settings_model');
         $settings_model = new $settings_model_name;
         if ($row) {
             $config = $settings_model->firstOrNew(['key' => $module_name]);
@@ -496,7 +496,7 @@ class InstallRepository
             $config->$module_name = 0;
             $config->save();
         }
-        $module_model_name = config('honesttraders.module_model');
+        $module_model_name = config('Jmrashed.module_model');
         $module_model = new $module_model_name;
         $ModuleManage = $module_model::find($module_name)->disable();
     }
@@ -536,7 +536,7 @@ class InstallRepository
         $name = gv($params, 'name');
         $e = gv($params, 'envatouser');
 
-        $query = DB::table(config('honesttraders.theme_table', 'themes'))->where('name', $name);
+        $query = DB::table(config('Jmrashed.theme_table', 'themes'))->where('name', $name);
         $theme = $query->first();
 
         if (!$theme) {
@@ -545,7 +545,7 @@ class InstallRepository
 
         $item_id = $theme->item_code;
 
-        $url =  verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=install&u=' . app_url() . '&ac=' . $code . '&i=' . $item_id . '&e=' . $e . '&t=Theme';
+        $url =  verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=install&u=' . app_url() . '&ac=' . $code . '&i=' . $item_id . '&e=' . $e . '&t=Theme';
 
         $response = curlIt($url);
 

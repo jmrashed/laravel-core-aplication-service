@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Requests;
+namespace Jmrashed\LaravelCoreService\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,12 +23,10 @@ class ModuleInstallRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
             'purchase_code'     => 'required',
             'name'              => 'required',
             'envatouser'        => 'required|email',
-
         ];
     }
 

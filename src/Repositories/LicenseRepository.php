@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Repositories;
+namespace Jmrashed\LaravelCoreService\Repositories;
 ini_set('max_execution_time', -1);
 
 use Illuminate\Support\Facades\Artisan;
@@ -31,7 +31,7 @@ class LicenseRepository
         $c = Storage::disk('local')->exists('.app_installed') ? Storage::disk('local')->get('.app_installed') : null;
         $v = Storage::disk('local')->exists('.version') ? Storage::disk('local')->get('.version') : null;
 
-        $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=remove&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v;
+        $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=remove&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v;
 
         $response = curlIt($url);
         Log::info($response);
@@ -60,7 +60,7 @@ class LicenseRepository
 
         $name = gv($params, 'name');
         $e = Storage::disk('local')->exists('.account_email') ? Storage::disk('local')->get('.account_email') : null;
-        $module_class_name = config('honesttraders.module_manager_model');
+        $module_class_name = config('Jmrashed.module_manager_model');
         $moduel_class = new $module_class_name;
         $s = $moduel_class->where('name', $name)->first();
 
@@ -80,7 +80,7 @@ class LicenseRepository
                 Log::info('Module purchase code not found');
             }
 
-            $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=remove&u=' . app_url() . '&ac=' . $s->purchase_code . '&i=' . $item_id . '&t=Module' . '&v=' . $version . '&e=' . $e;
+            $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=remove&u=' . app_url() . '&ac=' . $s->purchase_code . '&i=' . $item_id . '&t=Module' . '&v=' . $version . '&e=' . $e;
 
             $response = curlIt($url);
             Log::info($response);
@@ -93,7 +93,7 @@ class LicenseRepository
     protected function disableModule($module_name, $row = false, $file = false)
     {
 
-        $settings_model_name = config('honesttraders.settings_model');
+        $settings_model_name = config('Jmrashed.settings_model');
         $settings_model = new $settings_model_name;
         if ($row) {
             $config = $settings_model->firstOrNew(['key' => $module_name]);
@@ -108,7 +108,7 @@ class LicenseRepository
             $config->$module_name = 0;
             $config->save();
         }
-        $module_model_name = config('honesttraders.module_model');
+        $module_model_name = config('Jmrashed.module_model');
         $module_model = new $module_model_name;
         $ModuleManage = $module_model::find($module_name)->disable();
     }
@@ -119,7 +119,7 @@ class LicenseRepository
         $name = gv($params, 'name');
         $e = Storage::disk('local')->exists('.account_email') ? Storage::disk('local')->get('.account_email') : null;
 
-        $query = DB::table(config('honesttraders.theme_table', 'themes'))->where('name', $name);
+        $query = DB::table(config('Jmrashed.theme_table', 'themes'))->where('name', $name);
         $s = $query->first();
 
         if ($s) {
@@ -128,7 +128,7 @@ class LicenseRepository
             }
 
 
-            $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=remove&u=' . app_url() . '&ac=' . $s->purchase_code . '&i=' . $s->item_code . '&t=Theme' . '&v=' . $s->version . '&e=' . $s->email;
+            $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=remove&u=' . app_url() . '&ac=' . $s->purchase_code . '&i=' . $s->item_code . '&t=Theme' . '&v=' . $s->version . '&e=' . $s->email;
 
             $response = curlIt($url);
             Log::info($response);
@@ -145,13 +145,13 @@ class LicenseRepository
 
             //change to default theme
             if ($s->is_active == 1) {
-                $default = DB::table(config('honesttraders.theme_table', 'themes'))->where('id', 1)->update(
+                $default = DB::table(config('Jmrashed.theme_table', 'themes'))->where('id', 1)->update(
                     [
                         'is_active' => 1
                     ]
                 );
 
-                $check = DB::table(config('honesttraders.theme_table', 'themes'))->where('is_active', 1)->first();
+                $check = DB::table(config('Jmrashed.theme_table', 'themes'))->where('is_active', 1)->first();
                 if (function_exists('UpdateGeneralSetting')) {
                     UpdateGeneralSetting('frontend_active_theme', $check->name);
                 }

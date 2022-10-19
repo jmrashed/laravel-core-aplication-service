@@ -1,18 +1,18 @@
 <?php
 
-namespace HonestTraders\CoreService\Controllers;
+namespace Jmrashed\LaravelCoreService\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use HonestTraders\CoreService\Repositories\InitRepository;
-use HonestTraders\CoreService\Repositories\InstallRepository;
-use HonestTraders\CoreService\Requests\DatabaseRequest;
-use HonestTraders\CoreService\Requests\LicenseRequest;
-use HonestTraders\CoreService\Requests\UserRequest;
-use HonestTraders\CoreService\Requests\ModuleInstallRequest;
-use HonestTraders\CoreService\Requests\ThemeInstallRequest;
+use Jmrashed\LaravelCoreService\Repositories\InitRepository;
+use Jmrashed\LaravelCoreService\Repositories\InstallRepository;
+use Jmrashed\LaravelCoreService\Requests\DatabaseRequest;
+use Jmrashed\LaravelCoreService\Requests\LicenseRequest;
+use Jmrashed\LaravelCoreService\Requests\UserRequest;
+use Jmrashed\LaravelCoreService\Requests\ModuleInstallRequest;
+use Jmrashed\LaravelCoreService\Requests\ThemeInstallRequest;
 
 class InstallController extends Controller{
     protected $repo, $request, $init;

@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Requests;
+namespace Jmrashed\LaravelCoreService\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

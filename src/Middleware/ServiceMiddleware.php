@@ -1,10 +1,10 @@
 <?php
 
-namespace HonestTraders\CoreService\Middleware;
+namespace Jmrashed\LaravelCoreService\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use HonestTraders\CoreService\Repositories\InitRepository as ServiceRepository;
+use Jmrashed\LaravelCoreService\Repositories\InitRepository as ServiceRepository;
 use Illuminate\Support\Facades\Storage;
 
 class ServiceMiddleware

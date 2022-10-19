@@ -1,6 +1,6 @@
 <?php
 
-namespace HonestTraders\CoreService\Repositories;
+namespace Jmrashed\LaravelCoreService\Repositories;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -69,7 +69,7 @@ class InitRepository {
             return false;
         }
         $ve = Storage::disk('local')->exists('.ve') ? Storage::disk('local')->get('.ve') : 'e';
-        $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=verify&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v.'&current='.urlencode(request()->path()).'&ve='.$ve;
+        $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=verify&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v.'&current='.urlencode(request()->path()).'&ve='.$ve;
         $response = curlIt($url);
 
 
@@ -105,7 +105,7 @@ class InitRepository {
             return false;
         }
         $ve = Storage::disk('local')->exists('.ve') ? Storage::disk('local')->get('.ve') : 'e';
-        $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=verify&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v.'&ve='.$ve;
+        $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=verify&u=' . app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v.'&ve='.$ve;
         $response = curlIt($url);
 
         if($response){
@@ -131,11 +131,11 @@ class InitRepository {
         $c = Storage::disk('local')->exists('.app_installed') ? Storage::disk('local')->get('.app_installed') : null;
         $v = Storage::disk('local')->exists('.version') ? Storage::disk('local')->get('.version') : null;
 
-        $about = file_get_contents(verifyUrl(config('honesttraders.verifier', 'auth')) . '/about');
-        $update_tips = file_get_contents(verifyUrl(config('honesttraders.verifier', 'auth')) . '/update-tips');
-        $support_tips = file_get_contents(verifyUrl(config('honesttraders.verifier', 'auth')) . '/support-tips');
+        $about = file_get_contents(verifyUrl(config('Jmrashed.verifier', 'auth')) . '/about');
+        $update_tips = file_get_contents(verifyUrl(config('Jmrashed.verifier', 'auth')) . '/update-tips');
+        $support_tips = file_get_contents(verifyUrl(config('Jmrashed.verifier', 'auth')) . '/support-tips');
 
-        $url = verifyUrl(config('honesttraders.verifier', 'auth')) . '/api/cc?a=product&u=' .  app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v;
+        $url = verifyUrl(config('Jmrashed.verifier', 'auth')) . '/api/cc?a=product&u=' .  app_url() . '&ac=' . $ac . '&i=' . config('app.item') . '&e=' . $e . '&c=' . $c . '&v=' . $v;
 
 
         $response = curlIt($url);
