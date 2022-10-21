@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrashed\LaravelCoreAuthentication\Repositories;
+namespace Jmrashed\LaravelCoreService\Repositories;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
