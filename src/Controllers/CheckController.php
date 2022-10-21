@@ -2,13 +2,12 @@
 
 namespace Jmrashed\LaravelCoreService\Controllers;
 
-use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\ValidationException;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;  
 use Jmrashed\LaravelCoreService\Repositories\InitRepository;
 
 class CheckController extends Controller

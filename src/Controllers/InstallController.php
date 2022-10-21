@@ -2,29 +2,26 @@
 
 namespace Jmrashed\LaravelCoreService\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use Jmrashed\LaravelCoreService\Repositories\InitRepository;
-use Jmrashed\LaravelCoreService\Repositories\InstallRepository;
-use Jmrashed\LaravelCoreService\Requests\DatabaseRequest;
-use Jmrashed\LaravelCoreService\Requests\LicenseRequest;
 use Jmrashed\LaravelCoreService\Requests\UserRequest;
-use Jmrashed\LaravelCoreService\Requests\ModuleInstallRequest;
+use Jmrashed\LaravelCoreService\Requests\LicenseRequest;
+use Jmrashed\LaravelCoreService\Requests\DatabaseRequest;
 use Jmrashed\LaravelCoreService\Requests\ThemeInstallRequest;
+use Jmrashed\LaravelCoreService\Requests\ModuleInstallRequest;
+use Jmrashed\LaravelCoreService\Repositories\InstallRepository;
 
 class InstallController extends Controller{
     protected $repo, $request, $init;
 
     public function __construct(
         InstallRepository $repo,
-        InitRepository $init,
         Request $request
     )
     {
         $this->repo = $repo;
-        $this->init = $init;
         $this->request = $request;
     }
 
