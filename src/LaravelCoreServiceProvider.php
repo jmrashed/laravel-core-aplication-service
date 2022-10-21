@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrashed\CoreService;
+namespace Jmrashed\LaravelCoreService;
 
 use Illuminate\Support\ServiceProvider;
 use Jmrashed\LaravelCoreService\Console\Commands\MigrateStatusCommand;
