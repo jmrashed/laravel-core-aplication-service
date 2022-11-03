@@ -217,7 +217,7 @@
 
 @endphp
 @push('scripts')
-    <script type="text/javascript" src="{{ asset($base_path . '/js/function.js') }}"></script>
+    <script type="text/javascript" src="{{ $base_path}}/js/function.js"></script>
 <script>
 
 
