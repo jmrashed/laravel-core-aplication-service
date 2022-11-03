@@ -6,14 +6,14 @@ $base_path = $data['asset_path'];
 @section('content')
 <div class="col-4">
     <div class="padding-left-top">
-        <img src="{{ asset($base_path . '/') }}/images/Logo.png" alt="" />
+        <img src="{{ $base_path  }}/images/Logo.png" alt="" />
 
 
         <div class="mt-5 pe-2 follow-next-step-side" step-count="1">
             <div class="d-flex align-items-center gap-3">
                 <div
                     class="p-3 step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                    <img src="{{ asset($base_path . '/') }}/images/check-mark.svg" alt="" />
+                    <img src="{{ $base_path}}/images/check-mark.svg" alt="" />
                 </div>
                 <div>
                     <p>01.</p>
@@ -26,7 +26,7 @@ $base_path = $data['asset_path'];
             <div class="d-flex align-items-center gap-3">
                 <div
                     class="p-3 border step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                    <img src="{{ asset($base_path . '/') }}/images/check-mark.svg" alt="" />
+                    <img src="{{ $base_path}}/images/check-mark.svg" alt="" />
                 </div>
                 <div class="col-9">
                     <p>02.</p>
@@ -39,7 +39,7 @@ $base_path = $data['asset_path'];
             <div class="d-flex align-items-center gap-3">
                 <div
                     class="border step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                    <img src="{{ asset($base_path . '/') }}/images/check-mark.svg" alt="" />
+                    <img src="{{$base_path}}/images/check-mark.svg" alt="" />
                 </div>
                 <div class="ps-2">
                     <p>03.</p>
@@ -52,7 +52,7 @@ $base_path = $data['asset_path'];
             <div class="d-flex align-items-center gap-3">
                 <div
                     class="p-3 border step-with-border initial rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                    <img src="{{ asset($base_path . '/') }}/images/icon-white/database.svg" alt="" />
+                    <img src="{{ $base_path  }}/images/icon-white/database.svg" alt="" />
                 </div>
                 <div class="col-9">
                     <p>04.</p>
@@ -65,7 +65,7 @@ $base_path = $data['asset_path'];
             <div class="d-flex align-items-center gap-3">
                 <div
                     class="p-3 border step-with-border rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                    <img src="{{ asset($base_path . '/') }}/images/Icon/admin.svg" alt="" />
+                    <img src="{{ $base_path  }}/images/Icon/admin.svg" alt="" />
                 </div>
                 <div class="ps-2">
                     <p>05.</p>
@@ -78,7 +78,7 @@ $base_path = $data['asset_path'];
             <div class="d-flex align-items-center gap-3">
                 <div
                     class="p-3 border step-with-border rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                    <img src="{{ asset($base_path . '/') }}/images/Icon/complete.svg" alt="" />
+                    <img src="{{ $base_path  }}/images/Icon/complete.svg" alt="" />
                 </div>
                 <div>
                     <p>06.</p>
