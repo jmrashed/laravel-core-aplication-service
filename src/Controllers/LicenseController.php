@@ -9,28 +9,32 @@ use Jmrashed\LaravelCoreService\Repositories\LicenseRepository;
 use Toastr;
 
 class LicenseController extends Controller{
-    protected $repo, $request;
+    protected $repo, $request, $path;
 
     public function __construct(LicenseRepository $repo, Request $request)
     {
          $this->middleware('auth');
         $this->repo = $repo;
         $this->request = $request;
+
+        $this->path = url('/'). '/vendor/jmrashed';
     }
 
 
     public function revoke(){
 
         $ac = Storage::disk('local')->exists('.app_installed') ? Storage::disk('local')->get('.app_installed') : null;
-        if(!$ac){
-            return redirect()->route('service.install');
+        if(!$ac){ 
+        $data['asset_path'] =  $this->path;
+            return redirect()->route('service.install', compact('data'));
         }
 
         abort_if(auth()->user()->role_id != 1, 403);
 
         $this->repo->revoke();
 
-        return redirect()->route('service.install');
+        $data['asset_path'] =  $this->path;
+        return redirect()->route('service.install', compact('data'));
 
     }
 
@@ -38,7 +42,8 @@ class LicenseController extends Controller{
 
         $ac = Storage::disk('local')->exists('.app_installed') ? Storage::disk('local')->get('.app_installed') : null;
         if(!$ac){
-            return redirect()->route('service.install');
+            $data['asset_path'] =  $this->path;
+            return redirect()->route('service.install', compact('data'));
         }
 
         abort_if(auth()->user()->role_id != 1, 403);
@@ -54,7 +59,9 @@ class LicenseController extends Controller{
 
         $ac = Storage::disk('local')->exists('.app_installed') ? Storage::disk('local')->get('.app_installed') : null;
         if(!$ac){
-            return redirect()->route('service.install');
+            $data['asset_path'] =  $this->path;
+            return redirect()->route('service.install', compact('data'));
+            // return redirect()->route('service.install');
         }
 
         abort_if(auth()->user()->role_id != 1, 403);

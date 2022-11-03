@@ -14,7 +14,7 @@ use Jmrashed\LaravelCoreService\Requests\ModuleInstallRequest;
 use Jmrashed\LaravelCoreService\Repositories\InstallRepository;
 
 class InstallController extends Controller{
-    protected $repo, $request, $init;
+    protected $repo, $request, $init, $path;
 
     public function __construct(
         InstallRepository $repo,
@@ -23,6 +23,7 @@ class InstallController extends Controller{
     {
         $this->repo = $repo;
         $this->request = $request;
+        $this->path = url('/'). '/vendor/jmrashed';
     }
 
 
@@ -41,7 +42,7 @@ class InstallController extends Controller{
 		envu(['APP_ENV' => 'production']);
 		$name = env('APP_NAME');
 
-        $data['asset_path'] =url('/vendor/jmrashed');
+        $data['asset_path'] =  $this->path;
 		return view('service::install.preRequisite', compact('server_checks', 'folder_checks', 'name', 'verifier', 'has_false','data'));
     }
 
@@ -59,7 +60,7 @@ class InstallController extends Controller{
 
         $reinstall = $this->repo->checkReinstall();
 
-        $data['asset_path'] =url('/vendor/jmrashed');
+        $data['asset_path'] =  $this->path;
 		return view('service::install.license', compact('reinstall','data'));
     }
 
@@ -95,7 +96,7 @@ class InstallController extends Controller{
             return redirect()->route('service.user')->with(['message' => __('service::install.connection_established'), 'status' => 'success']);
         }
 
-        $data['asset_path'] =url('/vendor/jmrashed');
+        $data['asset_path'] =  $this->path;
 		return view('service::install.database', compact('data'));
     }
 
@@ -116,7 +117,7 @@ class InstallController extends Controller{
             Storage::disk('local')->put('.install_count', 1);
 
 
-        $data['asset_path'] =url('/vendor/jmrashed');
+        $data['asset_path'] =  $this->path;
             return view('service::install.done', $data);
         } else{
             abort(404);

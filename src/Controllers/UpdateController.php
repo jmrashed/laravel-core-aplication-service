@@ -12,7 +12,7 @@ class UpdateController extends Controller
 {
     protected $request;
     protected $repo;
-    protected $init;
+    protected $init, $path;
 
     public function __construct(
         Request $request,
@@ -22,11 +22,13 @@ class UpdateController extends Controller
         $this->request = $request;
         $this->repo = $repo;
         $this->init = $init;
+        $this->path = url('/').'/vendor/jmrashed';
     }
 
     public function index()
     {
         $preRequisite = $this->init->product();
+        $data['asset_path'] =  $this->path;
         return view('service::update.index', $preRequisite);
     }
 
