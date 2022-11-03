@@ -213,7 +213,7 @@
 @stop
 @php
 
-    $base_path = 'public/vendor/Jmrashed';
+    $base_path = $data['asset_path'];
 
 @endphp
 @push('scripts')

@@ -11,7 +11,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     @php
-    $base_path = 'public/vendor/Jmrashed';
+    $base_path = $data['asset_path'];
     @endphp
     <input type="hidden" id="base_path" value="{{ asset($base_path) }}">
     <link rel="stylesheet" href="{{ asset($base_path . '/css/style.css') }}" />

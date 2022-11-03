@@ -40,7 +40,9 @@ class InstallController extends Controller{
 
 		envu(['APP_ENV' => 'production']);
 		$name = env('APP_NAME');
-		return view('service::install.preRequisite', compact('server_checks', 'folder_checks', 'name', 'verifier', 'has_false'));
+
+        $data['asset_path'] =url('/vendor/jmrashed');
+		return view('service::install.preRequisite', compact('server_checks', 'folder_checks', 'name', 'verifier', 'has_false','data'));
     }
 
     public function license(){
@@ -57,7 +59,8 @@ class InstallController extends Controller{
 
         $reinstall = $this->repo->checkReinstall();
 
-		return view('service::install.license', compact('reinstall'));
+        $data['asset_path'] =url('/vendor/jmrashed');
+		return view('service::install.license', compact('reinstall','data'));
     }
 
     public function post_license(LicenseRequest $request){
@@ -91,7 +94,9 @@ class InstallController extends Controller{
         if ($this->repo->checkDatabaseConnection()) {
             return redirect()->route('service.user')->with(['message' => __('service::install.connection_established'), 'status' => 'success']);
         }
-		return view('service::install.database');
+
+        $data['asset_path'] =url('/vendor/jmrashed');
+		return view('service::install.database', compact('data'));
     }
 
     public function post_database(DatabaseRequest $request){
@@ -109,6 +114,9 @@ class InstallController extends Controller{
             Log::info('done');
             Storage::disk('local')->delete(['.user_email', '.user_pass']);
             Storage::disk('local')->put('.install_count', 1);
+
+
+        $data['asset_path'] =url('/vendor/jmrashed');
             return view('service::install.done', $data);
         } else{
             abort(404);

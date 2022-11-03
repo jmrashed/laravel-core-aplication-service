@@ -1,7 +1,7 @@
 @extends('service::layouts.app_install', ['title' => __('service::install.license')])
 
 @php
-$base_path = 'public/vendor/Jmrashed';
+$base_path = $data['asset_path'];
 @endphp
 @section('content')
 <div class="col-4">
