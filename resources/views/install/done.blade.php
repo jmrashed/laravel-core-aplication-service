@@ -10,7 +10,7 @@ $base_path = $data['asset_path'];
     <div class="padding-left-top">
         <div class="bg-white w-75 rounded" step-count="6">
             <div class="text-title p-3 text-center text-white">
-                <h3>{{ __('service::install.welcome_title') }}</h3>
+                <h3>Congratulations !</h3>
             </div>
             <div class="px-5 py-4 d-flex flex-column justify-content-center align-items-center gap-3 content-body">
                 <img src="{{ asset($base_path . '/') }}/images/complete-installation.png" alt="" />
