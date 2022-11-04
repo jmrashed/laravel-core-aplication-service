@@ -118,7 +118,7 @@ class InstallController extends Controller{
 
 
         $data['asset_path'] =  $this->path;
-            return view('service::install.done', $data);
+            return view('service::install.done', compact('data'));
         } else{
             abort(404);
         }
