@@ -92,9 +92,9 @@ class InstallController extends Controller{
         if(!$ac){
             abort(404);
         }
-        if ($this->repo->checkDatabaseConnection()) {
-            return redirect()->route('service.user')->with(['message' => __('service::install.connection_established'), 'status' => 'success']);
-        }
+        // if ($this->repo->checkDatabaseConnection()) {
+        //     return redirect()->route('service.user')->with(['message' => __('service::install.connection_established'), 'status' => 'success']);
+        // }
 
         $data['asset_path'] =  $this->path;
 		return view('service::install.database', compact('data'));
