@@ -4,7 +4,7 @@ function ajax_error(data) {
         toastr.error("What you are looking is not found", 'Opps!');
         return;
     } else if (data.status === 500) {
-        toastr.error('Something went wrong. If you are seeing this message multiple times, please contact Spondon It author.', 'Opps');
+        toastr.error('Something went wrong.', 'Opps');
         return;
     } else if (data.status === 200) {
         toastr.error('Something is not right', 'Error');
