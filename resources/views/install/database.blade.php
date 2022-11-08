@@ -63,9 +63,9 @@ $base_path = $data['asset_path'];
 <script>
     _formValidation('content_form');
     $(document).ready(function() {
-        setTimeout(function() {
-            $('.preloader h2').text('We are validating your license. Please do not refresh or close the browser')
-        }, 2000);
+            setTimeout(function() {
+                $('.preloader h2').text({{ __('service::install.preloader_text') }});
+            }, 2000);
     })
 </script>
 @endpush

@@ -106,6 +106,13 @@ class InstallRepository
         $folder[] = $this->check(is_writable(base_path("/storage/logs")), 'Folder /storage/logs is writable', 'Folder /storage/logs is not writable', true);
         $folder[] = $this->check(is_writable(base_path("/bootstrap/cache")), 'Folder /bootstrap/cache is writable', 'Folder /bootstrap/cache is not writable', true);
 
+        /** START | add your custom environment list for checking */
+        //
+        //
+        //
+        //
+        /** END | add your custom environment list for checking */
+
         $verifier = verifyUrl(config('Jmrashed.verifier', 'auth'));
 
         return ['server' => $server, 'folder' => $folder, 'verifier' => $verifier];
@@ -382,7 +389,7 @@ class InstallRepository
                 $code = file_get_contents($module_file);
             }
             $item_id = config('app.item');
-        } else if(gbv($params, 'tariq')){
+        } else if (gbv($params, 'tariq')) {
             return false;
         }
 

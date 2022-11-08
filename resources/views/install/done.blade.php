@@ -1,4 +1,4 @@
-@extends('service::layouts.app_install', ['title' => __('lms::install.welcome')])
+@extends('service::layouts.app_install', ['title' => __('service::install.welcome')])
 
 @php
 $base_path = $data['asset_path'];
