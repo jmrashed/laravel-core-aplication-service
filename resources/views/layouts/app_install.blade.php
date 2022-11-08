@@ -25,7 +25,6 @@
     <div class="row installer-container">
         <div class="col-4">
             <div class="padding-left-top">
-                <img src="{{ $base_path  }}/images/Logo.png" alt="" />
                 <div class="mt-5 pe-2 follow-next-step-side" step-count="1">
                     <div class="d-flex align-items-center gap-3">
                         <div class="p-3 step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
