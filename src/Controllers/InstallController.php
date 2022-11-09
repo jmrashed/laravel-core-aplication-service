@@ -161,33 +161,21 @@ class InstallController extends Controller{
     public function reinstall(Request $request, $key){
         
         if($key == "sure"){
-            // storage/app/.access_code
-
-            // user_email
-            // user_pass
-            // app_installed
-            // install_count
-
-            // storage/app/30626608
-            // storage/app/.access_code
-            // storage/app/.access_log
-            // storage/app/.account_email
-            // storage/app/.app_installed
-            // storage/app/.install_count
-            // storage/app/.logout
-
+        
             $list = [
-                'storage/app/30626608',
-                'storage/app/.access_code',
-                'storage/app/.access_log',
-                'storage/app/.account_email',
-                'storage/app/.app_installed',
-                'storage/app/.install_count',
-                'storage/app/.logout'
+                '30626608',
+                '.access_code',
+                '.access_log',
+                '.account_email',
+                '.app_installed',
+                '.install_count',
+                '.logout'
             ];
 
             foreach ($list as $key => $value) {
-               unlink($value);
+                if(Storage::disk('local')->exists($value)){
+                    Storage::disk('local')->delete($value);
+                }
             }
 
         }
