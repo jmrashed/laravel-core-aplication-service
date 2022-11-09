@@ -178,6 +178,10 @@ class InstallController extends Controller{
                 }
             }
 
+            return redirect('/');
+
+        }else{
+            abort(404);
         }
     }
 
