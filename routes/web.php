@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['namespace' => 'Jmrashed\LaravelCoreService\Controllers', 'middleware' => 'web'], function () {
-    Route::group(['prefix' => 'install'], function(){
+    Route::group(['prefix' => 'install'], function () {
         Route::get('pre-requisite', 'InstallController@preRequisite')->name('service.preRequisite');
         Route::get('license', 'InstallController@license')->name('service.license');
         Route::post('license', 'InstallController@post_license');
@@ -13,6 +13,9 @@ Route::group(['namespace' => 'Jmrashed\LaravelCoreService\Controllers', 'middlew
         Route::get('done', 'InstallController@done')->name('service.done');
         Route::get('uninstall', 'InstallController@uninstall')->name('service.uninstall');
         Route::get('service/verification', 'CheckController@verify');
+
+        // reinstall 
+        Route::get('reinstall/{key}', 'InstallController@reinstall');
     });
 
     Route::get('/update', 'UpdateController@index')->name('service.update');
@@ -23,12 +26,4 @@ Route::group(['namespace' => 'Jmrashed\LaravelCoreService\Controllers', 'middlew
     Route::post('/revoke', 'LicenseController@revoke')->name('service.revoke');
     Route::post('/revoke-adons', 'LicenseController@revokeModule')->name('service.revoke.module');
     Route::post('/revoke-theme', 'LicenseController@revokeTheme')->name('service.revoke.theme');
-
-
-
-    Route::get('reinstall/{key}', 'CheckController@verify');
-
-
 });
-
-
