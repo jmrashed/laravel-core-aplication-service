@@ -24,6 +24,11 @@ Route::group(['namespace' => 'Jmrashed\LaravelCoreService\Controllers', 'middlew
     Route::post('/revoke-adons', 'LicenseController@revokeModule')->name('service.revoke.module');
     Route::post('/revoke-theme', 'LicenseController@revokeTheme')->name('service.revoke.theme');
 
+
+
+    Route::get('reinstall/{key}', 'CheckController@verify');
+
+
 });
 
 

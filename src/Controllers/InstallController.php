@@ -2,9 +2,9 @@
 
 namespace Jmrashed\LaravelCoreService\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use Jmrashed\LaravelCoreService\Requests\UserRequest;
 use Jmrashed\LaravelCoreService\Requests\LicenseRequest;
@@ -154,6 +154,43 @@ class InstallController extends Controller{
         Toastr::success($message);
         return redirect()->back();
 
+    }
+
+
+
+    public function reinstall(Request $request, $key){
+        
+        if($key == "sure"){
+            // storage/app/.access_code
+
+            // user_email
+            // user_pass
+            // app_installed
+            // install_count
+
+            // storage/app/30626608
+            // storage/app/.access_code
+            // storage/app/.access_log
+            // storage/app/.account_email
+            // storage/app/.app_installed
+            // storage/app/.install_count
+            // storage/app/.logout
+
+            $list = [
+                'storage/app/30626608',
+                'storage/app/.access_code',
+                'storage/app/.access_log',
+                'storage/app/.account_email',
+                'storage/app/.app_installed',
+                'storage/app/.install_count',
+                'storage/app/.logout'
+            ];
+
+            foreach ($list as $key => $value) {
+               unlink($value);
+            }
+
+        }
     }
 
 
