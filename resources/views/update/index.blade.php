@@ -17,15 +17,15 @@
                             <table class="display school-table school-table-style width-shadow">
                                 <tbody>
                                     <tr>
-                                        <td>Current Installed Version</td>
+                                        <td>{{__('Current Installed Version')}}</td>
                                         <td>{{ gv($product, 'current_version') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Latest version</td>
+                                        <td>{{__('Latest version')}}</td>
                                         <td>{{ gv($product, 'next_release_version') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Date of Release</td>
+                                        <td>{{__('Date of Release')}}</td>
                                         <td>{{ gv($product, 'next_release_date') }}</td>
                                     </tr>
 
@@ -66,11 +66,7 @@
                             </table>
                         </div>
                         <div class="text-center">
-
-                            <a href="{{ url('/') }}" class="primary-btn fix-gr-bg" > Back To Home </a>
-
-
-
+                            <a href="{{ url('/') }}" class="primary-btn fix-gr-bg" > {{__('Back To Home')}} </a>
                         </div>
                         @endif
                     </div>
@@ -85,19 +81,19 @@
                             <table class="display school-table school-table-style width-shadow">
                                 <tbody>
                                     <tr>
-                                        <td>Current Installed Version</td>
+                                        <td>{{__('Current Installed Version')}}</td>
                                         <td>{{ gv($product, 'current_version') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Version Available for Upgrade</td>
+                                        <td>{{__('Version Available for Upgrade')}}</td>
                                         <td>{{ gv($product, 'next_release_version') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Date of Release</td>
+                                        <td>{{__('Date of Release')}}</td>
                                         <td>{{ gv($product, 'next_release_date') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Update Size</td>
+                                        <td>{{__('Update Size')}}</td>
 
                                         <td>{{bytesToSize(gv($product, 'next_release_size'))}}</td>
                                     </tr>
@@ -145,10 +141,7 @@
                             </table>
                         </div>
                         <div class="text-center">
-
                             <button type="button" class="primary-btn fix-gr-bg"  data-toggle="modal" data-target="#update_modal" data-modal-size="modal-md">Update</button>
-
-
                         </div>
                         @endif
                     </div>
@@ -196,7 +189,7 @@
                                         {{__('Cancel')}}
                                     </button>
 
-                                    <button type="submit" class="primary-btn fix-gr-bg submit" id="update">Update</button>
+                                    <button type="submit" class="primary-btn fix-gr-bg submit" id="update">{{__('Update')}}</button>
                                     <button type="button" class="primary-btn fix-gr-bg submitting" style="display: none; " disabled="">{{__('Updating')}}...</button>
 
                                 </div>
