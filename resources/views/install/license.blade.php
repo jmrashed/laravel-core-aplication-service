@@ -64,7 +64,7 @@
         _formValidation('content_form');
         $(document).ready(function() {
             setTimeout(function() {
-                $('.preloader h2').text({{ __('service::install.preloader_text') }});
+                $('.preloader h2').text('{{ __('service::install.preloader_text') }}');
             }, 2000);
         })
     </script>
