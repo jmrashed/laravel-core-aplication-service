@@ -10,6 +10,7 @@
     <input type="hidden" id="base_path" value="{{ $base_path }}">
     <link rel="stylesheet" href="{{ $base_path }}/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ $base_path }}/css/style.css" />
+    <link rel="stylesheet" href="{{ $base_path }}/css/toastr.min.css" />
 
 </head>
 
