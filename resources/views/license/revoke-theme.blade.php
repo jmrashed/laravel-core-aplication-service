@@ -1,13 +1,13 @@
 @if(!env('APP_SYNC'))
     <button data-target="#revoke_theme_license_modal_{{ $name }}" data-toggle="modal" class="  btn btn-sm btn-link ml-2">
-        Revoke License
+        {{__('Revoke License')}}
     </button>
 
     <div class="modal fade admin-query" id="revoke_theme_license_modal_{{ $name }}" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Revoke Theme License</h4>
+                    <h4 class="modal-title">{{__('Revoke Theme License')}}</h4>
                     <button type="button" class="close" data-dismiss="modal">
                         <i class="ti-close"></i>
                     </button>
@@ -21,14 +21,14 @@
                             <input type="hidden" name="name" value="{{ $name }}">
                             <div class="row">
                                 <div class="col-lg-12 text-center text-danger font-weight-bold" id="message-body">
-                                    If you revoke your license, your theme data will be removed, Please take a backup of your
-                                    data before revoking the theme license.
+                                    {{__('If you revoke your license, your theme data will be removed, Please take a backup of your
+                                    data before revoking the theme license.')}}
                                 </div>
 
                                 <div class="col-lg-12 text-center">
                                     <div class="mt-40 d-flex justify-content-between">
-                                        <button type="button" class="primary-btn tr-bg" data-dismiss="modal">Cancel</button>
-                                        <button class="primary-btn fix-gr-bg" type="submit">Revoke License</button>
+                                        <button type="button" class="primary-btn tr-bg" data-dismiss="modal">{{__('Cancel')}}</button>
+                                        <button class="primary-btn fix-gr-bg" type="submit">{{__('Revoke License')}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -49,6 +49,6 @@
 
 @else
     <button class="primary-btn small fix-gr-bg ml-2" >
-        Revoke License
+        {{__('Revoke License')}}
     </button>
 @endif

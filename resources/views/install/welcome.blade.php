@@ -1,7 +1,4 @@
 @extends('service::layouts.app_install', ['title' => __('service::install.welcome')])
-@php
-    $base_path = $data['asset_path'];
-@endphp
 @section('content')
     <!-- from section -->
     <div class="col-8 from-section">
@@ -11,7 +8,7 @@
                     <h3>{{ __('service::install.welcome_title') }}</h3>
                 </div>
                 <div class="px-5 py-4 d-flex flex-column justify-content-center align-items-center gap-3 content-body">
-                    <img src="{{ asset($base_path . '/') }}/images/illustration.png" alt="" />
+                    <img src="{{ asset( $data['asset_path']. '/') }}/images/illustration.png" alt="" />
                     <p class="text-center mb-3">
                         {{ __('service::install.welcome_description') }}
                     </p>
@@ -22,5 +19,4 @@
             </div>
         </div>
     </div>
-
 @stop

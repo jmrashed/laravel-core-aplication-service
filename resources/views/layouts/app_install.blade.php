@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ isset($title) ? $title .' | '. config('app.name') :  config('app.name') }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     @php
     $base_path = $data['asset_path'];
     @endphp
     <input type="hidden" id="base_path" value="{{ $base_path }}">
+    <link rel="stylesheet" href="{{ $base_path}}/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ $base_path}}/css/style.css" />
 </head>
 
@@ -111,7 +111,7 @@
     <script>
         toastr. {
             {
-                session('status')
+                session('status');
             }
         }('{{ session("message") }}', '{{ ucfirst(session('
             status ', '

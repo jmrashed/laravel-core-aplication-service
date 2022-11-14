@@ -1,8 +1,4 @@
 @extends('service::layouts.app_install', ['title' => __('service::install.license_verification')])
-
-@php
-    $base_path = $data['asset_path'];
-@endphp
 @section('content')
 
     <!-- from section -->
@@ -44,7 +40,7 @@
                             <label data-id="bg_option" class="primary_checkbox d-flex mr-12 ">
                                 <input name="re_install" type="checkbox">
                                 <span class="checkmark"></span>
-                                <span class="ml-2">Re install System</span>
+                                <span class="ml-2">{{__('Re install System')}}</span>
                             </label>
                         </div>
                     @endif

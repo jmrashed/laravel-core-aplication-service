@@ -164,7 +164,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Update System</h4>
+                <h4 class="modal-title">{{__('Update System')}}</h4>
                 <button type="button" class="close" data-dismiss="modal">
                     <i class="ti-close"></i>
                 </button>
@@ -180,24 +180,24 @@
                                 {!! $update_tips !!}
                             </div>
                             <div class="col-md-12" id="download_buttons">
-                                <p class="text-center">Are You sure to update  <br> version {{ gv($product, 'next_release_version') }}  <br>
-                                    Size of {{ bytesToSize(gv($product, 'next_release_size', 0)) }}
+                                <p class="text-center">{{__('Are You sure to update ')}} <br> {{__('version')}} {{ gv($product, 'next_release_version') }}  <br>
+                                    {{__('Size of')}} {{ bytesToSize(gv($product, 'next_release_size', 0)) }}
                                 </p>
                             </div>
                              <div class="col-md-12" id="on_progress" style="display: none;">
-                                <p class="text-center alert alert-danger">Don't perform any action till we are performing update!</p>
+                                <p class="text-center alert alert-danger">{{__("Don't perform any action till we are performing update!")}}</p>
 
-                                <p class="text-center">Update Size ({{ bytesToSize(gv($product, 'next_release_size', 0)) }}) - Updating.....</p>
+                                <p class="text-center">{{__('Update Size ')}}({{ bytesToSize(gv($product, 'next_release_size', 0)) }}) - {{__('Updating')}}.....</p>
 
                             </div>
                              <div class="col-lg-12 text-center" >
                                 <div class="mt-40 d-flex justify-content-between">
                                     <button type="button" class="primary-btn tr-bg" data-dismiss="modal">
-                                        Cancel
+                                        {{__('Cancel')}}
                                     </button>
 
                                     <button type="submit" class="primary-btn fix-gr-bg submit" id="update">Update</button>
-                                    <button type="button" class="primary-btn fix-gr-bg submitting" style="display: none; " disabled="">Updating...</button>
+                                    <button type="button" class="primary-btn fix-gr-bg submitting" style="display: none; " disabled="">{{__('Updating')}}...</button>
 
                                 </div>
                             </div>
@@ -257,8 +257,5 @@
             }
         });
     });
-
-
-
 </script>
 @endpush

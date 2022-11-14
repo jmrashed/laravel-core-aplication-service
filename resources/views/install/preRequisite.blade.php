@@ -1,14 +1,9 @@
 @extends('service::layouts.app_install', ['title' => __('Check Environment')])
-
-@php
-    $base_path = $data['asset_path'];
-@endphp
 @section('content')
 
     <!-- from section -->
     <div class="col-8 from-section">
         <div class="padding-left-top">
-
             <div class="bg-white w-75 rounded" step-count="2">
                 <div class="text-title p-3 text-center text-white">
                     <h3>{{ __('service::install.environment_title') }}</h3>
@@ -16,7 +11,6 @@
                 <div class="row p-5">
                     <h3>{{ __('Server Requirements') }}</h3>
                     <hr />
-
                     @foreach ($server_checks as $server)
                         @php
                             if (gv($server, 'type') == 'error' and !$has_false) {
@@ -25,7 +19,7 @@
                         @endphp
                         <div class="col-md-6">
                             <div class="list-item">
-                                <img src="{{ asset($base_path . '/') }}/images/{{ gv($server, 'type') == 'error' ? 'cross' : 'check' }}.svg"
+                                <img src="{{ asset($data['asset_path'] . '/') }}/images/{{ gv($server, 'type') == 'error' ? 'cross' : 'check' }}.svg"
                                     alt="" />
                                 <p class="text-{{ gv($server, 'type') == 'error' ? 'danger' : '' }}">
                                     {{ gv($server, 'message') }}</p>
@@ -45,7 +39,7 @@
                         @endphp
                         <div class="col-md-6">
                             <div class="list-item">
-                                <img src="{{ asset($base_path . '/') }}/images/{{ gv($folder, 'type') == 'error' ? 'cross' : 'check' }}.svg"
+                                <img src="{{ asset($data['asset_path'] . '/') }}/images/{{ gv($folder, 'type') == 'error' ? 'cross' : 'check' }}.svg"
                                     alt="" />
                                 <p class="text-{{ gv($folder, 'type') == 'error' ? 'danger' : '' }}">
                                     {{ gv($folder, 'message') }}</p>
@@ -66,7 +60,7 @@
                     @else
                         <div class="py-3 rounded text-center px-5 btn-with-opacity">
                             <p class="px-5 all-the">
-                                <b>{{ __("All the Requirements look's Fine. Let;s Dig in") }}</b>
+                                <b>{{ __("All the Requirements look's Fine !") }}</b>
                             </p>
                         </div>
                         <a href="{{ route('service.license') }}"
@@ -77,5 +71,4 @@
             </div>
         </div>
     </div>
-
 @stop
