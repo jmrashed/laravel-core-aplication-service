@@ -19,7 +19,7 @@
     <div class="preloader">
         <div class="loader_img">
             <img src="{{ $base_path }}/loader.gif" alt="loading..." height="200" width="200">
-            <h2>Please Wait</h2>
+            <h2>{{__('Please Wait...')}}</h2>
         </div>
     </div>
     <div class="row installer-container">
@@ -31,8 +31,8 @@
                             <img src="{{ $base_path}}/images/check-mark.svg" alt="" />
                         </div>
                         <div>
-                            <p>01.</p>
-                            <h5><b>Welcome Note</b></h5>
+                            <p>{{__('01.')}}</p>
+                            <h5><b>{{__("Welcome Note")}}</b></h5>
                         </div>
                     </div>
                     <span class="next-step-status-line"></span>
@@ -43,8 +43,8 @@
                             <img src="{{ $base_path}}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="col-9">
-                            <p>02.</p>
-                            <h5><b>Check Environment</b></h5>
+                            <p>{{__('02.')}}</p>
+                            <h5><b>{{__("Check Environment")}}</b></h5>
                         </div>
                     </div>
                     <span class="next-step-status-line"></span>
@@ -55,8 +55,8 @@
                             <img src="{{ $base_path}}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="ps-2">
-                            <p>03.</p>
-                            <h5><b>Licence Verification</b></h5>
+                            <p>{{__('03.')}}</p>
+                            <h5><b>{{__("Licence Verification")}}</b></h5>
                         </div>
                     </div>
                     <span class="next-step-status-line"></span>
@@ -67,8 +67,8 @@
                             <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="col-9">
-                            <p>04.</p>
-                            <h5><b>Database Setup</b></h5>
+                            <p>{{__('04.')}}</p>
+                            <h5><b>{{__("Database Setup")}}</b></h5>
                         </div>
                     </div>
                     <span class="next-step-status-line"></span>
@@ -79,8 +79,8 @@
                             <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="ps-2">
-                            <p>05.</p>
-                            <h5><b>Admin Setup</b></h5>
+                            <p>{{__('05.')}}</p>
+                            <h5><b>{{__("Admin Setup")}}</b></h5>
                         </div>
                     </div>
                     <span class="next-step-status-line"></span>
@@ -91,8 +91,8 @@
                             <img src="{{ $base_path  }}/images/icon-white/complete.svg" alt="" />
                         </div>
                         <div>
-                            <p>06.</p>
-                            <h5><b>Complete</b></h5>
+                            <p>{{__('06.')}}</p>
+                            <h5><b>{{__("Complete")}}</b></h5>
                         </div>
                     </div>
                 </div>
