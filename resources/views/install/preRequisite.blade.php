@@ -60,7 +60,7 @@
                     @else
                         <div class="py-3 rounded text-center px-5 btn-with-opacity">
                             <p class="px-5 all-the">
-                                <b>{{ __("All the Requirements look's Fine !") }}</b>
+                                <b>{{ __("It looks like everything meets the requirements!") }}</b>
                             </p>
                         </div>
                         <a href="{{ route('service.license') }}"

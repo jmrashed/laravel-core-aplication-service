@@ -65,7 +65,6 @@ return array(
     "verified" => "License verified.",
     "verify" => "Verify",
     "welcome" => "Welcome",
-    "welcome_description" => "Thank you for choosing this Application. Please move on to the next step to complete the installation!",
     "welcome_title" => "Welcome To Installation",
     "zip_file_corrupted" => "Zip file is corrupted. Please download again.",
     "module_verify" => "Module Verified Successfully",
@@ -78,4 +77,6 @@ return array(
     "theme_verify" => "Theme Verified Successfully",
     "theme_name" => "Theme Name",
     "preloader_text"=>'We are validating your license. Please do not refresh or close the browser',
+    
+    "welcome_description" => "Thanks for choosing this laravel installer. To complete the installation, please proceed to the next step!",
 );
