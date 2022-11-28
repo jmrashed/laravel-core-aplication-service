@@ -93,7 +93,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="p-3 border step-with-border initial rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/icon-white/complete.svg" alt="" />
+                            <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
                         </div>
                         <div>
                             <p>{{ __('06.') }}</p>
