@@ -8,7 +8,7 @@ use Jmrashed\LaravelCoreService\Repositories\InstallRepository;
 if (!function_exists('isTestMode')) {
     function isTestMode()
     {
-        if (env('APP_MODE') == 'test') {
+        if (env('APP_DEMO') == true) {
             return true;
         } else {
             return false;

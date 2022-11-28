@@ -11,9 +11,9 @@
     $base_path = $data['asset_path'];
     @endphp
     <input type="hidden" id="base_path" value="{{ $base_path }}">
-     <link rel="stylesheet" href="{{ $base_path }}/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ $base_path }}/css/toastr.min.css" />
-    <link rel="stylesheet" href="{{ $base_path }}/css/style.css" />
+     <link rel="stylesheet" href="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/css/toastr.min.css" />
+     <link rel="stylesheet" href="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/css/style.css" />
 </head>
 
 <body>
@@ -101,12 +101,12 @@
         </div>
         @yield('content')
     </div>
-    <script type="text/javascript" src="{{ $base_path }}/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="{{ $base_path }}/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ $base_path }}/js/toastr.min.js"></script>
-    <script src="{{ $base_path }}/js/parsley.min.js"></script>
-    <script src="{{ $base_path }}/js/function.js"></script>
-    <script src="{{ $base_path }}/js/common.js"></script>
+    <script type="text/javascript" src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/toastr.min.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/parsley.min.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/function.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/common.js"></script>
 
     @if (session("message"))
     <script>

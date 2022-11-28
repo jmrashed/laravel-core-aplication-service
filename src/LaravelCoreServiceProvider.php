@@ -30,7 +30,10 @@ class LaravelCoreServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'service');
-        $this->loadViewsFrom(resource_path('/views/vendors/service'), 'service');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'service');
+
+        
         $this->publishes([
             __DIR__.'/../public' => public_path('vendor/jmrashed'),
              __DIR__.'/../resources/views' => resource_path('views/vendors/service'),

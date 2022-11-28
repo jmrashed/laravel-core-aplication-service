@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ isset($title) ? $title . ' | ' . config('app.name') : config('app.name') }}</title>
-    <input type="hidden" id="base_path" value="{{ $base_path }}">
-    <link rel="stylesheet" href="{{ $base_path }}/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ $base_path }}/css/style.css" />
-    <link rel="stylesheet" href="{{ $base_path }}/css/toastr.min.css" />
+    <input type="hidden" id="base_path" value="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}">
+    <link rel="stylesheet" href="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/css/style.css" />
+    <link rel="stylesheet" href="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/css/toastr.min.css" />
 
 </head>
 
 <body>
     <div class="preloader">
         <div class="loader_img">
-            <img src="{{ $base_path }}/loader.gif" alt="loading..." height="200" width="200">
+            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/loader.gif" alt="loading..." height="200" width="200">
             <h2>{{ __('Please Wait') }}</h2>
         </div>
     </div>
@@ -28,7 +28,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="p-3 step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
+                            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/images/check-mark.svg" alt="" />
                         </div>
                         <div>
                             <p>{{ __('01.') }}</p>
@@ -41,7 +41,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="p-3 border step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
+                            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="col-9">
                             <p>{{ __('02.') }}</p>
@@ -54,7 +54,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="border step-with-border completed  rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
+                            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="ps-2">
                             <p>{{ __('03.') }}</p>
@@ -67,7 +67,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="p-3 border step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
+                            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="col-9">
                             <p>{{ __('04.') }}</p>
@@ -80,7 +80,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="p-3 border step-with-border completed rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/check-mark.svg" alt="" />
+                            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/images/check-mark.svg" alt="" />
                         </div>
                         <div class="ps-2">
                             <p>{{ __('05.') }}</p>
@@ -93,7 +93,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <div
                             class="p-3 border step-with-border initial rounded-circle d-flex flex-column justify-content-center align-items-center image-icon tab-button">
-                            <img src="{{ $base_path }}/images/icon-white/complete.svg" alt="" />
+                            <img src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/images/icon-white/complete.svg" alt="" />
                         </div>
                         <div>
                             <p>{{ __('06.') }}</p>
@@ -106,12 +106,12 @@
 
         @yield('content')
     </div>
-    <script type="text/javascript" src="{{ $base_path }}/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="{{ $base_path }}/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ $base_path }}/js/toastr.min.js"></script>
-    <script src="{{ $base_path }}/js/parsley.min.js"></script>
-    <script src="{{ $base_path }}/js/function.js"></script>
-    <script src="{{ $base_path }}/js/common.js"></script>
+    <script type="text/javascript" src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/toastr.min.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/parsley.min.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/function.js"></script>
+    <script src="{{asset('vendor/jmrashed/laravel-core-aplication-service/public/')}}/js/common.js"></script>
 
     @if (session('message'))
         <script>
