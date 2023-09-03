@@ -174,7 +174,11 @@ class InstallRepository
         if (!$link) {
             return false;
         }
-        $select_db = mysqli_select_db($link, $db_database);
+        try {
+            $select_db = mysqli_select_db($link, $db_database);
+        } catch (\Throwable $th) {
+            return false;
+        }
 
         if (!$select_db) {
             return false;
